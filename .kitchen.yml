@@ -1,0 +1,30 @@
+
+
+---
+driver:
+  name: "terraform"
+  command_timeout: 1800
+
+provisioner:
+  name: terraform
+
+platforms:
+  - name: terraform
+
+suites:
+  - name: default
+    driver:
+      name: terraform
+      command_timeout: 1800
+      root_module_directory: test/fixtures/default/
+    verifier:
+      name: terraform
+      color: false
+      systems:
+        - name: default
+          backend: local
+          controls:
+            - gcloud
+            - gcloud_dataflow
+            - gsutil
+
