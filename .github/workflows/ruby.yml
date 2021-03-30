@@ -38,7 +38,7 @@ jobs:
       # Run Kitchen tests 
       - name: kitchen-testing
         run : |
-          cd ..
+        
           kitchen create
           kitchen converge
           kitchen list
