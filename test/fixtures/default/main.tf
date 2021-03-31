@@ -28,7 +28,7 @@ module "dataflow-job" {
   zone                  = var.zone
   max_workers           = 1
   template_gcs_path     = "gs://jit/templates/template-name.json"
-  temp_gcs_location     = module.dataflow-bucket.name
+  temp_gcs_location     = "gs://jit/tmp"
   service_account_email = var.service_account_email
   machine_type          = "n1-standard-1"
   network_self_link     = "mynewnetwork"
