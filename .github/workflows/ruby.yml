@@ -35,6 +35,13 @@ jobs:
       # copying service account file to test directory
       - id : copy-json-file
         run : cp cred.json ./test/fixtures/default/
+        
+      - name: connect with GCP
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+        
       # Run Kitchen tests 
       - name: kitchen-testing
         run : |
