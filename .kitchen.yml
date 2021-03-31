@@ -18,7 +18,7 @@ suites:
       command_timeout: 1800
       root_module_directory: test/fixtures/default/
     verifier:
-      name: inspec
+      name: terraform
       color: false
       systems:
         - name: default
