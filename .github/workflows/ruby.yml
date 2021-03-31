@@ -19,22 +19,25 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: samjithin/kitchen:latest
-    env : 
-      GOOGLE_APPLICATION_CREDENTIALS: "cred.json"
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    #env : 
+    #  GOOGLE_APPLICATION_CREDENTIALS: "cred.json"
+    
+
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      
       - uses: actions/checkout@v2
+
       # setting the config file as per configuration variable
-      - id : config-file-creation
-        name : setup service account file
-        run : |- 
-          cat > cred.json <<-EOF
-            ${{ secrets.GCP_SA_KEY }}
-          EOF
+      #- id : config-file-creation
+      #  name : setup service account file
+      #  run : |- 
+      #    cat > cred.json <<-EOF
+      #      ${{ secrets.GCP_SA_KEY }}
+      #    EOF
+
       # copying service account file to test directory
-      - id : copy-json-file
-        run : cp cred.json ./test/fixtures/default/
+      #- id : copy-json-file
+      #  run : cp cred.json ./test/fixtures/default/
         
       - name: connect with GCP
         uses: google-github-actions/setup-gcloud@master

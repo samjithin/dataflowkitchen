@@ -1,6 +1,6 @@
 provider google {
   version = "= 3.3.0"
-    credentials = file("cred.json")
+    #credentials = file("cred.json")
 }
 
 
