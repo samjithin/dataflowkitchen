@@ -41,7 +41,6 @@ jobs:
         
           kitchen create
           kitchen converge
-          kitchen list
-          kitchen verify
+          kitchen list    # kitchen verify
           kitchen destroy
 
